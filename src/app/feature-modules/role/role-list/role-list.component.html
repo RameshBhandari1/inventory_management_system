@@ -1,0 +1,53 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>Role List</h4>
+      </div>
+      <div class="col-sm-6">
+        <button class="btn float-end btn-outline-primary" (click)="addRole()">
+          Add New Role
+        </button>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body text-success">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th scope="col">S.N</th>
+                <th scope="col">Role Name</th>
+                <th scope="col">Role Type</th>
+                <th scope="col">Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <ng-container *ngIf="roleList?.length">
+              <tr *ngFor="let role of roleList; let i = index;">
+                <th scope="row">{{i + 1}}.</th>
+                <td>{{role?.roleName}}</td>
+                <td>{{role?.roleType | titlecase}}</td>
+                <td>
+                  <ng-container class="d-flex">
+                    <button class="btn btn-sm bg-success border-0 text-white rounded-3 mx-2"
+                            (click)="editRole(role)">Edit
+                    </button>
+                    <button (click)="onDeleteRecord(role?.id)" class="btn btn-sm bg-danger border-0 text-white rounded-3">Delete</button>
+                  </ng-container>
+                </td>
+              </tr>
+              </ng-container>
+              <tr *ngIf="!roleList?.length">
+                <td colspan="4">There is no role.</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <h4>Welcome Back !</h4>
+    </div>
+    <hr/>
+    <div class="row">
+
+      <!-- Icon Cards-->
+      <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+        <div class="inforide">
+          <div class="row" [routerLink]="'/home/user-list'">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-4 rideone">
+              <img
+                src="./assets/img/user.png">
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+              <h4>Total Users</h4>
+              <h2>{{totalRecordCount?.users}}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+        <div class="inforide">
+          <div class="row" [routerLink]="'/home/role-list'">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-4 ridetwo">
+              <img
+                src="./assets/img/user.png">
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+              <h4>Total Roles</h4>
+              <h2>{{totalRecordCount?.roles}}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+        <div class="inforide">
+          <div class="row" [routerLink]="'/home/item-list'">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-4 ridethree">
+              <img
+                src="./assets/img/inventory.png">
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+              <h4>Total Items</h4>
+              <h2>{{totalRecordCount?.items}}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+
+      <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+        <div class="inforide">
+          <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-4 ridethree">
+              <img
+                src="./assets/img/inventory.png">
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+              <h4>Sales</h4>
+              <h2>0</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Icon Cards-->
+      <div class="col-lg-4 col-md-4 col-sm-6 col-12g mb-2 mt-4">
+        <div class="inforide">
+          <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-4 rideone">
+              <img
+                src="./assets/img/inventory.png">
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+              <h4>Reviews</h4>
+              <h2>0</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+        <div class="inforide">
+          <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-4 ridetwo">
+              <img
+                src="./assets/img/inventory.png">
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+              <h4>Delivery</h4>
+              <h2>0</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

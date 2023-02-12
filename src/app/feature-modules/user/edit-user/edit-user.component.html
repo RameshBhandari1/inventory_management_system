@@ -1,0 +1,68 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h4>Edit User</h4>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body text-success m-3">
+            <form [formGroup]="userForm">
+              <div class="row">
+                <div class="col-sm-4 my-3">
+                  <label class="col-form-label-sm float-start form-label fw-bold">Full Name</label>
+                  <input width="90%" type="text" class="form-control" formControlName="fullname" name="fullname"
+                         placeholder="Full Name">
+                </div>
+                <div class="col-sm-4 my-3">
+                  <label class="col-form-label-sm float-start form-label fw-bold">Email</label>
+                  <input width="90%" type="text" class="form-control" formControlName="email" name="email"
+                         placeholder="Email">
+                </div>
+                <div class="col-sm-4 my-3">
+                  <label class="col-form-label-sm float-start form-label fw-bold">Username</label>
+                  <input width="90%" type="text" class="form-control" formControlName="username" name="username"
+                         placeholder="Username">
+                </div>
+                <div class="col-sm-4 my-3">
+                  <label class="col-form-label-sm float-start form-label fw-bold">Password</label>
+                  <input width="90%" type="password" class="form-control" formControlName="password" name="password"
+                         placeholder="Password">
+                </div>
+                <div class="col-sm-4 my-3">
+                  <label class="col-form-label-sm float-start form-label fw-bold">Role</label>
+                  <select class="form-control dropdown" formControlName="role" name="role">
+                    <option class="dropdown-item" [ngValue]="roleAccess"
+                            *ngFor="let roleAccess of roleList">{{roleAccess?.roleName | titlecase}}
+                    </option>
+                  </select>
+                </div>
+                <div class="col-sm-4 my-3">
+                  <label class="col-form-label-sm float-start form-label fw-bold">Address</label>
+                  <input width="90%" type="text" class="form-control" formControlName="address" name="address"
+                         placeholder="Address">
+                </div>
+                <div class="col-sm-4 my-3">
+                  <label class="col-form-label-sm float-start form-label fw-bold">Phone No.</label>
+                  <input width="90%" type="text" class="form-control" formControlName="contact" name="contact"
+                         placeholder="Phone">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-sm-6">
+                  <button class="btn btn-outline-danger" (click)="back()" type="button">Back</button>
+                </div>
+                <div class="col-sm-6">
+                  <button class="btn btn-outline-success float-end" (click)="saveUser()" type="submit">Save</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<section class="h-100">
+  <div class="container h-100">
+    <div class="row justify-content-sm-center h-100">
+      <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9 my-5">
+        <div class="card shadow-lg py-3">
+          <div class="card-body p-5">
+            <h3 class="fs-5 text-center card-title mb-4">Inventory Management System !</h3>
+            <hr />
+            <form [formGroup]="loginForm" class="needs-validation" autocomplete="off">
+              <div class="mb-3">
+                <label class="mb-2 text-muted" for="username">Username</label>
+                <input id="username" type="text" class="form-control" placeholder="Your Username" formControlName="username" name="username" required autofocus
+                       [ngClass]="{ 'is-invalid': submitted && form['username'].errors, 'is-valid': form['username'].valid }"
+                />
+                <span *ngIf="submitted || form['username'].touched || form['username'].dirty && form['username'].invalid"
+                      class="info-msg text-danger">
+                  <small
+                    *ngIf="form['username'].errors && form['username'].errors?.['required']">This is the required field.</small>
+                </span>
+              </div>
+
+              <div class="mb-3">
+                <label class="text-muted mb-2" for="password">Password</label>
+                <input id="password" type="password" placeholder="Your Password" class="form-control" formControlName="password" name="password" required
+                [ngClass]="{ 'is-invalid': submitted && form['password'].errors, 'is-valid': form['password'].valid }"
+                placeholder="Password" formControlName="password"
+                />
+                <span *ngIf="submitted || form['password'].touched || form['password'].dirty && form['password'].invalid"
+                      class="info-msg text-danger">
+                  <small
+                    *ngIf="form['password'].errors && form['password'].errors?.['required']">This is the required field.</small>
+                </span>
+              </div>
+
+              <div class="mt-4">
+                <button type="submit" (click)="onUserLogin(loginForm.value)" [disabled]="submitted" class="btn w-100 btn-primary ms-auto">
+                  Login
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <app-footer></app-footer>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,56 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>Users List</h4>
+      </div>
+      <div class="col-sm-6">
+        <button class="btn float-end btn-outline-primary" (click)="addUser()">
+          Add New User
+        </button>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body text-success">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th scope="col">S.N</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Username</th>
+                <th scope="col">Role</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Contact</th>
+                <th scope="col">Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let user of userList; let i = index; let f = first">
+                <th scope="row">{{i + 1}}.</th>
+                <td>{{user?.fullname}}</td>
+                <td>@{{user?.username}}</td>
+                <td>{{user?.role?.roleName}}</td>
+                <td>{{user?.email}}</td>
+                <td>{{user?.address}}</td>
+                <td>{{user?.contact}}</td>
+                <td>
+                  <ng-container class="d-flex" *ngIf="!f">
+                    <button class="btn btn-sm bg-success border-0 text-white rounded-3 mx-2"
+                            (click)="editUser(user)">Edit
+                    </button>
+                    <button (click)="onDeleteRecord(user?.id)" class="btn btn-sm bg-danger border-0 text-white rounded-3">Delete</button>
+                  </ng-container>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 d-flex mx-2">
+        <i class="bi bi-arrow-bar-left" ></i>
+        <h4>Add Item</h4>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body text-success">
+            <form [formGroup]="itemForm">
+              <div class="row">
+                <div class="col-sm-4 my-3">
+                  <label class="col-form-label-sm float-start form-label fw-bold">Item Name</label>
+                  <input width="90%" type="text" class="form-control" formControlName="name" name="name"
+                         placeholder="Item Name">
+                </div>
+                <div class="col-sm-4 my-3">
+                  <label class="col-form-label-sm float-start form-label fw-bold">Category</label>
+                  <input width="90%" type="text" class="form-control" formControlName="category" name="category"
+                         placeholder="Category">
+                </div>
+                <div class="col-sm-4 my-3">
+                  <label class="col-form-label-sm float-start form-label fw-bold">Price</label>
+                  <input width="90%" type="number" class="form-control" formControlName="price" name="price"
+                         placeholder="Price">
+                </div>
+                <div class="col-sm-4 my-3">
+                  <label class="col-form-label-sm float-start form-label fw-bold">Quantity</label>
+                  <input width="90%" type="number" class="form-control" formControlName="quantity" name="quantity"
+                         placeholder="Quantity">
+                </div>
+                <div class="col-sm-4 my-3">
+                  <label class="col-form-label-sm float-start form-label fw-bold">Description</label>
+                  <input width="90%" type="text" class="form-control" formControlName="description" name="description"
+                         placeholder="Description">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-sm-6">
+                  <button class="btn btn-outline-danger" (click)="back()" type="button">Back</button>
+                </div>
+                <div class="col-sm-6">
+                  <button class="btn btn-outline-success float-end" (click)="saveItem()" type="submit">Save</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

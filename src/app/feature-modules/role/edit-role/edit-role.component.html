@@ -1,0 +1,43 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h4>Edit Role</h4>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body text-success m-3">
+            <form [formGroup]="roleForm">
+              <div class="row">
+                <div class="col-sm-6 my-3">
+                  <label class="col-form-label-sm float-start form-label fw-bold">Role Name</label>
+                  <input width="90%" type="text" class="form-control" formControlName="roleName" name="roleName"
+                         placeholder="Role Name">
+                </div>
+                <div class="col-sm-6 my-3">
+                  <label class="col-form-label-sm float-start form-label fw-bold">Role Type</label>
+                  <select class="form-control dropdown" formControlName="roleType" name="roleType">
+                    <option class="dropdown-item" [value]="roleAccess?.key"
+                            *ngFor="let roleAccess of roleList">{{(roleAccess?.key?.replace('_' , ' ')) | titlecase}}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-sm-6">
+                  <button class="btn btn-outline-danger" (click)="back()" type="button">Back</button>
+                </div>
+                <div class="col-sm-6">
+                  <button class="btn btn-outline-success float-end" (click)="saveRole()" type="submit">Save</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
